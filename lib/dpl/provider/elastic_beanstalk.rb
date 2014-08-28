@@ -76,7 +76,7 @@ module DPL
 
       def create_zip
         directory = Dir.pwd
-        build_files = Dir.glob("#{directory}/**/*")
+        build_files = Dir.glob("#{directory}/*")
         zipfile_name = File.join(directory, archive_name)
         puts ">>>>>>>>>>>>>>> #{build_files.to_s} >>>>>>>>>>>>>>>"
         puts ">>>>>>>>>>>>>>> #{directory.to_s} >>>>>>>>>>>>>>>"
