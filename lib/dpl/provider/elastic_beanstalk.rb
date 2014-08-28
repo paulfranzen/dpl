@@ -71,7 +71,7 @@ module DPL
       end
 
       def files_to_pack
-        `git ls-files -z`.split("\x0")
+        `git ls-files -z`.split("\x0") + `git ls-files -o`.split("\x0")
       end
 
       def create_zip
