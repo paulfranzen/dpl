@@ -78,7 +78,8 @@ module DPL
         directory = Dir.pwd
         build_files = Dir.glob("**/*")
         zipfile_name = File.join(directory, archive_name)
-        puts ">>>> #{build_files.to_s} >>>>"
+        puts ">>>>>>>>>>>>>>> #{build_files.to_s} >>>>>>>>>>>>>>>"
+        puts ">>>>>>>>>>>>>>> #{files_to_pack.to_s} >>>>>>>>>>>>>>>"
         Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
           files_to_pack.each do |file|
             relative_archive_path = File.join(directory, '/')
