@@ -77,9 +77,8 @@ module DPL
       def create_zip
         directory = Dir.pwd
         build_files = Dir.glob("../**/*")
-        build_files_b = Dir.glob("~/build/WeConnect/SocialWeb/**/*")
+        build_files_b = Dir.glob("~/build/**/*")
         zipfile_name = File.join(directory, archive_name)
-        puts ">>>>>>>>>>>>>>> #{build_files.to_s} >>>>>>>>>>>>>>>"
         puts ">>>>>>>>>>>>>>> #{build_files_b.to_s} >>>>>>>>>>>>>>>"
         Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
           files_to_pack.each do |file|
