@@ -71,13 +71,13 @@ module DPL
       end
 
       def files_to_pack
-        `git ls-files -o -z`.split("\x0") #+ `git ls-files -z`.split("\x0")
+        `git ls-files -o -z`.split("\x0") + `git ls-files -z`.split("\x0")
       end
 
       def create_zip
         directory = Dir.pwd
         zipfile_name = File.join(directory, archive_name)
-
+        puts ">>>> #{files_to_pack.to_s} >>>>"
         Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
           files_to_pack.each do |file|
             relative_archive_path = File.join(directory, '/')
